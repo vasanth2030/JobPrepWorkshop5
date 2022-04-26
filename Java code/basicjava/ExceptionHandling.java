@@ -10,17 +10,30 @@ public class ExceptionHandling {
 		int num1 = sc.nextInt();
 		int num2 = sc.nextInt();
 
+//		try {
+//			int div = num1 / num2;
+//			System.out.println("The value after division is " + div);
+//
+//		} catch (ArithmeticException e) {
+//
+//			System.out.println("Enter a non-zero divisor.");
+//		} finally {
+//			System.out.println("Inside finally.");
+//		}
+
+		int div;
 		try {
-			int div = num1 / num2;
-			System.out.println("The value after division is " + div);
-
-		} catch (ArithmeticException e) {
-
-			System.out.println("Enter a non-zero divisor.");
-		} finally {
-			System.out.println("Inside finally.");
+			div = divide(num1, num2);
+			System.out.println("Answer: " + div);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+
 		System.out.println("End of program");
+	}
+
+	public static int divide(int a, int b) throws Exception {
+		throw new Exception("Manually created exception");
 	}
 
 }
